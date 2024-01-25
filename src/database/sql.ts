@@ -6,10 +6,10 @@ dotenv.config();
 const signale = new Signale();
 
 const config = {
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    database: process.env.DB_DATABASE,
-    password: process.env.DB_PASSWORD,
+    host: process.env.HOST,
+    user: process.env.USUARIO,
+    database: process.env.DB,
+    password: process.env.CONTRASENA,
     waitForConnections: true,
     connectionLimit: 6,
   };
