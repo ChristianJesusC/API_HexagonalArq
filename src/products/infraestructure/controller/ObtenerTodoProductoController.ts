@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 
 import { ObtenerTodoProductoCasoUso } from "../../application/MethodsProductos/ObtenerTodoProductoCasoUso";
 
-export class GetAllProductController {
+export class ObtenerTodoProductoController {
   constructor(readonly ObtenerTodoProductoCasoUso: ObtenerTodoProductoCasoUso) {}
 
   async run(req: Request, res: Response) {
@@ -15,7 +15,7 @@ export class GetAllProductController {
           data: products.map((product: any) => {
             return {
               id: product.idProducto,
-              nombre: product.nombreProduct,
+              nombreCarro: product.nombreCarro,
               precioVenta: product.precioVenta,
               precioCompra: product.precioCompra,
               cantidad: product.cantidad,

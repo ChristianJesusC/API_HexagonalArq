@@ -5,7 +5,7 @@ export class CrearProductoCasoUso {
   constructor(readonly ProductoRepository: ProductoRepository) {}
 
   async run(
-    nombreProduct: string,
+    nombreCarro: string,
     precioVenta: number,
     precioCompra: number,
     cantidad: number,
@@ -13,7 +13,7 @@ export class CrearProductoCasoUso {
   ): Promise<Producto | null> {
     try {
       const product = await this.ProductoRepository.createProduct(
-        nombreProduct,
+        nombreCarro,
         precioVenta,
         precioCompra,
         cantidad,

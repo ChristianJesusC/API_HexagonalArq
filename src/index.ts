@@ -1,15 +1,15 @@
-import express, { json } from 'express'
+import express, { json } from "express";
 import dotenv from "dotenv";
-import morgan from 'morgan'
-import signale from 'signale'
+import morgan from "morgan";
+import signale from "signale";
 
-const app = express()
+const app = express();
 dotenv.config();
-app.use(express.json())
-app.use(morgan("dev"))
+app.use(express.json());
+app.use(morgan("dev"));
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT;
 
-app.listen(PORT,()=>{
-    signale.success("Server online " + PORT)
-})
+app.listen(PORT, () => {
+  signale.success("Server online " + PORT);
+});

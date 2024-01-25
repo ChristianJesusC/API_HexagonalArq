@@ -1,14 +1,14 @@
 import { Request, Response } from "express";
 import { CrearProductoCasoUso } from "../../application/MethodsProductos/CrearProductoCasoUso";
 
-export class createProductUseCase {
+export class CrearProductoController {
   constructor(readonly CrearProductoCasoUso: CrearProductoCasoUso) {}
 
   async run(req: Request, res: Response) {
     const data = req.body;
     try {
       const product = await this.CrearProductoCasoUso.run(
-        data.nombreProduct,
+        data.nombreCarro,
         data.precioVenta,
         data.precioCompra,
         data.cantidad,
@@ -20,7 +20,7 @@ export class createProductUseCase {
           status: "success",
           data: {
             id: product?.idProducto,
-            nombreProduct: product?.nombreProduct,
+            nombreCarro: product?.nombreCarro,
             precioVenta: product?.precioVenta,
             precioCompra: product?.precioCompra,
             cantidad: product?.cantidad,

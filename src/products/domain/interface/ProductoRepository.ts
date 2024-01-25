@@ -3,7 +3,7 @@ import { Producto } from "../entities/Producto";
 export interface ProductoRepository {
   getAll(): Promise<Producto[] | null>;
   createProduct(
-    nombreProduct: string,
+    nombreCarro: string,
     precioVenta: number,
     precioCompra: number,
     cantidad: number,

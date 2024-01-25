@@ -1,7 +1,7 @@
 import { Proveedor } from "../../domain/entities/Proveedor";
 import { ProveedorRepository } from "../../domain/interface/ProveedorRepository";
 
-export class ObtenerTodoProductoCasoUso {
+export class ObtenerTodoProveedorCasoUso {
   constructor(readonly ProveedorRepository: ProveedorRepository) {}
 
   async run(): Promise<Proveedor[] | null> {
