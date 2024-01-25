@@ -19,7 +19,6 @@ export class CrearProductoController {
         res.status(201).send({
           status: "success",
           data: {
-            id: product?.idProducto,
             nombreCarro: product?.nombreCarro,
             precioVenta: product?.precioVenta,
             precioCompra: product?.precioCompra,

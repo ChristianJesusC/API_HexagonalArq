@@ -11,7 +11,7 @@ export class MysqlSupplierRepository implements ProveedorRepository {
 
       return dataSupplier.map(
         (supplier: any) =>
-          new Proveedor(supplier.id, supplier.nombre, supplier.marca, supplier.lugarOrigen)
+          new Proveedor(supplier.idProveedor, supplier.nombre, supplier.marca, supplier.lugarOrigen)
       );
     } catch (error) {
       return null;

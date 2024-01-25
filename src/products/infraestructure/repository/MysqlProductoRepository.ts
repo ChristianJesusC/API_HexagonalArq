@@ -26,7 +26,7 @@ export class MysqlProductRepository implements ProductoRepository {
   }
 
   async createProduct(
-    nombreCarro:string,
+    nombreCarro: string,
     precioVenta: number,
     precioCompra: number,
     cantidad: number,
@@ -34,10 +34,23 @@ export class MysqlProductRepository implements ProductoRepository {
   ): Promise<Producto | null> {
     const sql =
       "INSERT INTO productos (nombreCarro,precioVenta,precioCompra,cantidad,idProveedor) VALUES (?, ?, ?, ?, ?)";
-    const params: any[] = [nombreCarro, precioVenta, precioCompra,cantidad, idProveedor];
+    const params: any[] = [
+      nombreCarro,
+      precioVenta,
+      precioCompra,
+      cantidad,
+      idProveedor,
+    ];
     try {
       const [result]: any = await query(sql, params);
-      return new Producto(result.insertId, nombreCarro, precioVenta, precioCompra , cantidad, idProveedor);
+      return new Producto(
+        result.insertId,
+        nombreCarro,
+        precioVenta,
+        precioCompra,
+        cantidad,
+        idProveedor
+      );
     } catch (error) {
       return null;
     }

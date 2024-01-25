@@ -8,10 +8,8 @@ dotenv.config();
 app.use(express.json());
 app.use(morgan("dev"));
 
-
 import { supplierRouter } from "./products/infraestructure/routes/SupplierRouter";
 import { productRouter } from "./products/infraestructure/routes/ProductRouter";
-
 
 app.use("/productos", productRouter)
 app.use("/proveedores", supplierRouter)

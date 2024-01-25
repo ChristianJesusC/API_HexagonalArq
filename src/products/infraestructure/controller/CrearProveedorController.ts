@@ -20,7 +20,7 @@ export class CrearProveedorController {
             id: supplier?.idProveedor,
             name: supplier?.nombre,
             marca: supplier?.marca,
-            lugarOrigen: supplier?.lugarOrigen
+            lugarOrigen: supplier?.lugarOrigen,
           },
         });
       else
