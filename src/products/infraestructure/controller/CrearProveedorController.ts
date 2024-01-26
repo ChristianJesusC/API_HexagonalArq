@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CrearProveedorCasoUso } from "../../application/MethodsProveedor/CrearProveedorCasoUso";
+import { CrearProveedorCasoUso } from "../../application/MetodosProveedor/CrearProveedorCasoUso";
 
 export class CrearProveedorController {
   constructor(readonly CrearProveedorCasoUso: CrearProveedorCasoUso) {}
@@ -7,20 +7,20 @@ export class CrearProveedorController {
   async run(req: Request, res: Response) {
     const data = req.body;
     try {
-      const supplier = await this.CrearProveedorCasoUso.run(
+      const proveedor = await this.CrearProveedorCasoUso.run(
         data.nombre,
         data.marca,
         data.lugarOrigen
       );
 
-      if (supplier)
+      if (proveedor)
         res.status(201).send({
           status: "success",
           data: {
-            id: supplier?.idProveedor,
-            name: supplier?.nombre,
-            marca: supplier?.marca,
-            lugarOrigen: supplier?.lugarOrigen,
+            id: proveedor?.idProveedor,
+            name: proveedor?.nombre,
+            marca: proveedor?.marca,
+            lugarOrigen: proveedor?.lugarOrigen,
           },
         });
       else

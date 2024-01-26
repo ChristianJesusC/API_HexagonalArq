@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
-import { CrearProductoCasoUso } from "../../application/MethodsProductos/CrearProductoCasoUso";
+import { CrearAutomovilCasoUso } from "../../application/MetodosAutos/CrearAutomovilCasoUso";
 
-export class CrearProductoController {
-  constructor(readonly CrearProductoCasoUso: CrearProductoCasoUso) {}
+export class CrearAutomovilController {
+  constructor(private readonly CrearAutomovilCasoUso: CrearAutomovilCasoUso) {}
 
   async run(req: Request, res: Response) {
     const data = req.body;
     try {
-      const product = await this.CrearProductoCasoUso.run(
+      const product = await this.CrearAutomovilCasoUso.run(
         data.nombreCarro,
         data.precioVenta,
         data.precioCompra,
@@ -23,7 +23,7 @@ export class CrearProductoController {
             precioVenta: product?.precioVenta,
             precioCompra: product?.precioCompra,
             cantidad: product?.cantidad,
-            idProveedor: product?.idProveedor
+            idProveedor: product?.idProveedor,
           },
         });
       else

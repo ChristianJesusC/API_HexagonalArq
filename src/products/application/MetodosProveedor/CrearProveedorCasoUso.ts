@@ -1,5 +1,5 @@
-import { Proveedor } from "../../domain/entities/Proveedor";
-import { ProveedorRepository } from "../../domain/interface/ProveedorRepository";
+import { Proveedor } from "../../domain/entities/Proveedores";
+import { ProveedorRepository } from "../../domain/ProveedorRepository";
 
 export class CrearProveedorCasoUso {
   constructor(readonly ProveedorRepository: ProveedorRepository) {}
@@ -10,7 +10,7 @@ export class CrearProveedorCasoUso {
     lugarOrigen: string
   ): Promise<Proveedor | null> {
     try {
-      const proveedor = await this.ProveedorRepository.createSupplier(
+      const proveedor = await this.ProveedorRepository.crearProveedor(
         nombre,
         marca,
         lugarOrigen

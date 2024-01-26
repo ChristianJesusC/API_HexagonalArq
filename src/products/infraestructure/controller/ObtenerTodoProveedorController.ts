@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import {ObtenerTodoProveedorCasoUso }from "../../application/MethodsProveedor/ObtenerTodoProveedorCasoUso"
+import {ObtenerTodoProveedorCasoUso }from "../../application/MetodosProveedor/ObtenerTodoProveedorCasoUso"
 
 export class ObtenerTodoProveedorController {
   constructor(readonly ObtenerTodoProveedorCasoUso: ObtenerTodoProveedorCasoUso) {}

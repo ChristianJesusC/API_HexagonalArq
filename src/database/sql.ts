@@ -2,18 +2,17 @@ import dotenv from "dotenv";
 import mysql from "mysql2/promise";
 import { Signale } from "signale";
 
-dotenv.config();
 const signale = new Signale();
+dotenv.config();
 
-const config = {
+export const sqlConexion = {
   host: process.env.HOST,
   user: process.env.USUARIO,
   database: process.env.DB,
   password: process.env.DB_PASSWORD,
-  waitForConnections: true,
 };
 
-const pool = mysql.createPool(config);
+const pool = mysql.createPool(sqlConexion);
 
 export async function query(sql: string, params: any[]) {
   try {
@@ -27,3 +26,4 @@ export async function query(sql: string, params: any[]) {
     return null;
   }
 }
+
