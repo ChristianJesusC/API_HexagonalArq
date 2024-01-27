@@ -7,5 +7,4 @@ export interface ProveedorRepository {
     marca: string,
     lugarOrigen: string
   ): Promise<Proveedor | null>;
-  eliminarProveedor(idProveedor: number): Promise<boolean>;
 }

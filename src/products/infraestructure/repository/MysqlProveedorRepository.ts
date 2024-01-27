@@ -35,15 +35,4 @@ export class MysqlProveedorRepository implements ProveedorRepository {
       return null;
     }
   }
-  async eliminarProveedor(idProveedor: number): Promise<boolean> {
-    const sql = "DELETE FROM proveedores WHERE idProveedor = ?";
-    const params: any[] = [idProveedor];
-    try {
-      const result: any = await query(sql, params);
-      return result.affectedRows > 0;
-    } catch (error) {
-      return false;
-    }
-  }
-  
 }

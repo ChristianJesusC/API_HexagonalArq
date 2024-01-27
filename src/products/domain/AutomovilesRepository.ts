@@ -9,6 +9,5 @@ export interface AutomovilesRepository {
     cantidad: number,
     idProveedor: number
   ): Promise<Automoviles | null>;
-  eliminarAuto(idAuto: number): Promise<boolean>;
 
 }

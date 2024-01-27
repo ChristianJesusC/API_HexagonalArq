@@ -54,14 +54,4 @@ export class MysqlAutomoviilesRepository implements AutomovilesRepository {
       return null;
     }
   }
-  async eliminarAuto(idAuto: number): Promise<boolean> {
-    const sql = "DELETE FROM automoviles WHERE idAuto = ?";
-    const params: any[] = [idAuto];
-    try {
-      const result: any = await query(sql, params);
-      return result.affectedRows > 0;
-    } catch (error) {
-      return false;
-    }
-  }
 }

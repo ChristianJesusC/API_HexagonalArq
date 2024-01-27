@@ -2,5 +2,5 @@ projectKey=API_ARQ_HEXAGONAL
 serverUrl=http://localhost:9000
 serverVersion=10.3.0.82913
 dashboardUrl=http://localhost:9000/dashboard?id=API_ARQ_HEXAGONAL
-ceTaskId=AY1FcPGubLCNbEwBLKU7
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AY1FcPGubLCNbEwBLKU7
+ceTaskId=AY1JJJHwrXZpsFcTPe9Y
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AY1JJJHwrXZpsFcTPe9Y

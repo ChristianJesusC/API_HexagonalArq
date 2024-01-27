@@ -6,6 +6,5 @@ export interface AutomovilesRepository {
     nombre: string,
     idAuto: number,
   ): Promise<Compradores | null>; 
-  eliminarComprador(idComprador: number): Promise<boolean>;
 
 }
