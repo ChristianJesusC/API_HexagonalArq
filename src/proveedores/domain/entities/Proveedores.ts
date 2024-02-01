@@ -3,6 +3,7 @@ export class Proveedor {
     readonly idProveedor: number,
     readonly nombre: string,
     readonly marca: string,
-    readonly lugarOrigen: string
+    readonly lugarOrigen: string,
+    readonly password: string,
   ) {}
 }

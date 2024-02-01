@@ -7,13 +7,15 @@ export class CrearProveedorCasoUso {
   async run(
     nombre: string,
     marca: string,
-    lugarOrigen: string
+    lugarOrigen: string,
+    password: string
   ): Promise<Proveedor | null> {
     try {
       const proveedor = await this.ProveedorRepository.crearProveedor(
         nombre,
         marca,
-        lugarOrigen
+        lugarOrigen,
+        password
       );
       return proveedor;
     } catch (error) {

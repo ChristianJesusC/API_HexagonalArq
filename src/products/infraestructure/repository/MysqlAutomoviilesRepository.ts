@@ -3,6 +3,17 @@ import { Automoviles } from "../../domain/entities/Automoviles";
 import { AutomovilesRepository } from "../../domain/AutomovilesRepository";
 
 export class MysqlAutomoviilesRepository implements AutomovilesRepository {
+  async eliminarId(idAuto: number): Promise<Automoviles | null> {
+    const sql = "DELETE FROM automoviles WHERE idAuto = ?";
+  const params: any[] = [idAuto];
+  try {
+    await query(sql, params);
+    return null
+  } catch (error) {
+    throw error;
+  }
+  }
+
   async obtenerTodo(): Promise<Automoviles[] | null> {
     const sql = "SELECT * FROM automoviles";
     try {

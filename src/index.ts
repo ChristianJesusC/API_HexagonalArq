@@ -3,13 +3,12 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import signale from "signale";
 
-
 const app = express();
 dotenv.config();
 app.use(express.json());
 app.use(morgan("dev"));
 
-import { supplierRouter } from "./products/infraestructure/routes/ProveedorRouter";
+import { supplierRouter } from "./proveedores/infrastructure/routes/ProveedorRouter";
 import { productRouter } from "./products/infraestructure/routes/AutomovilesRouter";
 
 app.use("/automoviles", productRouter);

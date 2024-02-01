@@ -5,6 +5,7 @@ export interface ProveedorRepository {
   crearProveedor(
     nombre: string,
     marca: string,
-    lugarOrigen: string
+    lugarOrigen: string,
+    password: string
   ): Promise<Proveedor | null>;
 }

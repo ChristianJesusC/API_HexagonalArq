@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { CrearProveedorCasoUso } from "../../application/MetodosProveedor/CrearProveedorCasoUso";
+import bcrypt from "bcrypt"
 
 export class CrearProveedorController {
   constructor(readonly CrearProveedorCasoUso: CrearProveedorCasoUso) {}
@@ -10,7 +11,8 @@ export class CrearProveedorController {
       const proveedor = await this.CrearProveedorCasoUso.run(
         data.nombre,
         data.marca,
-        data.lugarOrigen
+        data.lugarOrigen,
+        data.password
       );
 
       if (proveedor)
@@ -21,6 +23,7 @@ export class CrearProveedorController {
             name: proveedor?.nombre,
             marca: proveedor?.marca,
             lugarOrigen: proveedor?.lugarOrigen,
+            password: proveedor?.password
           },
         });
       else
