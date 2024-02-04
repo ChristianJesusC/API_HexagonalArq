@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CrearProveedorCasoUso } from "../../application/MetodosProveedor/CrearProveedorCasoUso";
+import { CrearProveedorCasoUso } from "../../application/UseCase/CrearProveedorCasoUso";
 import bcrypt from "bcrypt"
 
 export class CrearProveedorController {
