@@ -9,13 +9,15 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 import { supplierRouter } from "./proveedores/infrastructure/routes/ProveedorRouter";
-import { productRouter } from "./products/infraestructure/routes/AutomovilesRouter";
+import { autoRouter } from "./products/infraestructure/routes/AutomovilesRouter";
 
-app.use("/automoviles", productRouter);
+app.use("/auto", autoRouter);
 app.use("/proveedores", supplierRouter);
 
 const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
+  console.clear()
   signale.success("Servidor corriendo en el puerto " + PORT);
+  
 });

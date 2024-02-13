@@ -5,9 +5,9 @@ export class EliminarAutoCasoUsoController {
   constructor(readonly eliminarAutoCasoUso: EliminarAutoCasoUso) {}
 
   async run(req: Request, res: Response) {
-    const id: number = parseInt(req.params.id);
+    const idAuto: number = parseInt(req.params.idAuto);
     try {
-      await this.eliminarAutoCasoUso.run(id);
+      await this.eliminarAutoCasoUso.run(idAuto);
       res.status(200).send({
         status: "success",
         data: "Registro eliminado exitosamente",

@@ -24,27 +24,24 @@ export class MysqlAutomoviilesRepository implements AutomovilesRepository {
     }
   }
 
-  async getById(idAuto: number): Promise<Automoviles | null> {
+  async obtenerIdAuto(idAuto: number): Promise<Automoviles | null> {
     const sql = "SELECT * FROM automoviles WHERE idAuto=?";
     const params: any[] = [idAuto];
     try {
-      const [result]: any = await query(sql, params);
-      if (result.length > 0) {
-        const automovil = result[0];
-        return new Automoviles(
-          automovil.idAuto,
-          automovil.nombreCarro,
-          automovil.precioVenta,
-          automovil.precioCompra,
-          automovil.cantidad,
-          automovil.idProveedor
-        );
-      } else {
-        return null;
-      }
+      const [auto]: any = await query(sql, params);
+      return new Automoviles(
+        auto[0].idAuto,
+        auto[0].nombreCarro,
+        auto[0].precioVenta,
+        auto[0].precioCompra,
+        auto[0].cantidad,
+        auto[0].idProveedor
+      );
     } catch (error) {
-      throw error;
-    }
+      console.log(error);
+      
+      return null;
+    }  
   }
 
   async eliminarId(idAuto: number): Promise<Automoviles | null> {

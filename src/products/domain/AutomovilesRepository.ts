@@ -10,5 +10,5 @@ export interface AutomovilesRepository {
     idProveedor: number
   ): Promise<Automoviles | null>;
   eliminarId(idAuto: number): Promise<Automoviles | null>;
-  getById(idAuto: number): Promise<Automoviles | null>;
+  obtenerIdAuto(idAuto: number): Promise<Automoviles | null>;
 }

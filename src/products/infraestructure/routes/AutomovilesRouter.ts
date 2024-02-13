@@ -2,13 +2,13 @@ import express from "express";
 import {
   createProductController,
   getAllProductController,
-  eliminarAutosCasoUso,
-  getByIdAutoUseCase
+  eliminarAutosController,
+  ObtenerIdAutoController
 } from "../DependenciesAutomoviles";
 
-export const productRouter = express.Router();
+export const autoRouter = express.Router();
 
-productRouter.get("/", getAllProductController.run.bind(getAllProductController));
-productRouter.post("/", createProductController.run.bind(createProductController));
-productRouter.delete("/:idAuto", eliminarAutosCasoUso.run.bind(eliminarAutosCasoUso));
-productRouter.get( "/:idAuto", getByIdAutoUseCase.run.bind(getByIdAutoUseCase));
+autoRouter.post("/", createProductController.run.bind(createProductController));
+autoRouter.get("/", getAllProductController.run.bind(getAllProductController));
+autoRouter.get( "/:idAuto", ObtenerIdAutoController.run.bind(ObtenerIdAutoController));
+autoRouter.delete("/:idAuto", eliminarAutosController.run.bind(eliminarAutosController));

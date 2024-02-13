@@ -6,20 +6,21 @@ export class GetByIdProductController {
   constructor(readonly getByIdAutoUseCase: GetByIdAutoUseCase) {}
 
   async run(req: Request, res: Response) {
-    const idAuto: number = parseInt(req.params.id);
+    const idAuto: number = parseInt(req.params.idAuto);
+    
     try {
-      const product = await this.getByIdAutoUseCase.run(idAuto);
+      const auto = await this.getByIdAutoUseCase.run(idAuto);
 
-      if (product)
+      if (auto)
         res.status(200).send({
           status: "success",
           data: {
-            idAuto: product.idAuto,
-            nombreCarro: product.nombreCarro,
-            precioVenta: product.precioVenta,
-            precioCompra: product.precioCompra,
-            cantidad: product.cantidad,
-            idProveedor: product.idProveedor,
+            idAuto: auto.idAuto,
+            nombreCarro: auto.nombreCarro,
+            precioVenta: auto.precioVenta,
+            precioCompra: auto.precioCompra,
+            cantidad: auto.cantidad,
+            idProveedor: auto.idProveedor,
           },
         });
       else

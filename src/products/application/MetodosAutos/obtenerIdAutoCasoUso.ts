@@ -6,7 +6,7 @@ export class GetByIdAutoUseCase {
 
   async run(idAuto: number): Promise<Automoviles | null> {
     try {
-      const result = await this.AutomovilesRepository.getById(idAuto);
+      const result = await this.AutomovilesRepository.obtenerIdAuto((idAuto));
       return result;
     } catch (error) {
       return null;
